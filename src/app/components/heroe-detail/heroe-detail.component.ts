@@ -19,6 +19,7 @@ export class HeroeDetailComponent implements OnInit {
     this.activatedRoute.params.subscribe(
       params => {
         const heroId = params.id;
+        // tslint:disable-next-line:radix
         this.heroe = heroesService.getHero(parseInt(heroId));
         this.casa = this.heroe.casa.toString();
       }

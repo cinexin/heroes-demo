@@ -80,4 +80,9 @@ export class HeroesService {
   getHero(id: number): Heroe {
     return (this.heroes[id] !== undefined) ? this.heroes[id] : this.heroes[0];
   }
+
+  searchHero(searchTerm: string): Heroe[] {
+    searchTerm = searchTerm.toLowerCase();
+    return this.getHeroes().filter(heroe => heroe.nombre.toLowerCase().includes(searchTerm));
+  }
 }
