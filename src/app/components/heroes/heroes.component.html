@@ -1,13 +1,14 @@
-<h1>Heroes from Comics</h1>
+<h1 class="fadeIn fast">Heroes from Comics</h1>
 <hr>
-<div class="card-columns">
-  <div class="card">
-    <img src="assets/img/aquaman.png" class="card-img-top" alt="Aquaman">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-      <button class="btn btn-outline-primary my-2 my-sm-0">View details</button>
+<div class="card-columns fadeIn">
+  <div class="card" *ngFor="let heroe of heroes; let i = index">
+    <img [srcset]="heroe.img" class="card-img-top" [alt]="heroe.nombre">
+    <div class="card-body animated fadeIn fast">
+      <h5 class="card-title">{{heroe.nombre}}</h5>
+      <p class="card-text">{{heroe.bio}}</p>
+      <p class="card-text"><small class="text-muted">{{heroe.aparicion}}</small></p>
+      <button (click)="verHeroe(i)"  class="btn btn-outline-primary my-2 my-sm-0">View details</button>
+      <!--<a [routerLink]="['/heroe-detail',i]" class="btn btn-outline-primary my-2 my-sm-0">Ver más</a>-->
     </div>
   </div>
 </div>
