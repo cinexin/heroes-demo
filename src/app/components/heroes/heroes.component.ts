@@ -25,9 +25,6 @@ export class HeroesComponent implements OnInit {
   }
 
   verHeroe(index: number): void {
-    console.log(`Heroe index: ${index}`);
-    const hero = this.heroes[index] ? this.heroes[index] : this.heroes[0];
-    console.log(`Hero selected: ${hero}`);
-    this.router.navigate(['heroe-detail', index]);
+    this.router.navigate(['/heroe-detail', index]);
   }
 }

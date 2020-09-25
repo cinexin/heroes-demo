@@ -8,14 +8,5 @@
   </div>
 </div>
 <div class="card-columns fadeIn">
-  <div class="card" *ngFor="let heroe of filteredHeroes; let i = index">
-    <img [srcset]="heroe.img" class="card-img-top" [alt]="heroe.nombre">
-    <div class="card-body animated fadeIn fast">
-      <h5 class="card-title">{{heroe.nombre}}</h5>
-      <p class="card-text">{{heroe.bio}}</p>
-      <p class="card-text"><small class="text-muted">{{heroe.aparicion}}</small></p>
-      <!--<button (click)="verHeroe(i)"  class="btn btn-outline-primary my-2 my-sm-0">View details</button>-->
-      <!--<a [routerLink]="['/heroe-detail',i]" class="btn btn-outline-primary my-2 my-sm-0">Ver más</a>-->
-    </div>
-  </div>
+  <app-hero-card *ngFor="let hero of filteredHeroes; let i = index" [hero]="hero" [index]="i"></app-hero-card>
 </div>
