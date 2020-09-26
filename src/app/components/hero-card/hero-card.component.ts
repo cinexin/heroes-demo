@@ -1,5 +1,6 @@
 import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 import {Router} from '@angular/router';
+import {Heroe} from '../../services/heroes.service';
 
 @Component({
   selector: 'app-hero-card',
@@ -9,22 +10,21 @@ import {Router} from '@angular/router';
 export class HeroCardComponent implements OnInit {
 
   @Input() hero: any = {};
-  @Input() index: number;
 
-  @Output() selectedHero: EventEmitter<number >;
+  @Output() selectedHero: EventEmitter<Heroe>;
 
   constructor(
     private router: Router
   ) {
-    this.selectedHero = new EventEmitter<number>();
+    this.selectedHero = new EventEmitter<Heroe>();
   }
 
   ngOnInit(): void {
   }
 
   verHeroe(): void {
-    /*console.log(`Heroe index: ${this.index}`);
-    this.router.navigate(['heroe-detail', this.index]);*/
-    this.selectedHero.emit(this.index);
+    console.log(`Heroe index: ${this.hero.id}`);
+    this.router.navigate(['heroe-detail', this.hero.id]);
+   // this.selectedHero.emit(this.index);
   }
 }

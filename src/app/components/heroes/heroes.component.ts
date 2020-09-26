@@ -24,7 +24,7 @@ export class HeroesComponent implements OnInit {
     console.log('Heroes fetched: ' + this.heroes);
   }
 
-  verHeroe(index: number): void {
-    this.router.navigate(['/heroe-detail', index]);
+  verHeroe(hero: Heroe): void {
+    this.router.navigate(['/heroe-detail', hero.id]);
   }
 }

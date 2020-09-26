@@ -1,8 +1,7 @@
 <h1 class="fadeIn fast">Heroes from Comics</h1>
 <hr>
 <div class="card-columns fadeIn">
-  <app-hero-card *ngFor="let hero of heroes; let i = index"
-                 [hero]="hero" [index]="i"
-                 (selectedHero)="verHeroe($event)">
+  <app-hero-card *ngFor="let hero of heroes"
+                 [hero]="hero" (selectedHero)="verHeroe($event)">
   </app-hero-card>
 </div>
