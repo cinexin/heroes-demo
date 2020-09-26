@@ -10,6 +10,7 @@ export interface Hero {
   aliases: string[];
   altura: number;
   popularidad: number;
+  valorPrimerComic: number;
   bio: string;
   img: string;
   aparicion: string;
