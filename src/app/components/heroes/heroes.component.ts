@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Heroe, HeroesService} from '../../services/heroes.service';
+import {HeroesService} from '../../services/heroes.service';
 import {Router} from '@angular/router';
+import {Hero} from '../../model/hero';
 
 @Component({
   selector: 'app-heroes',
@@ -9,7 +10,7 @@ import {Router} from '@angular/router';
 })
 export class HeroesComponent implements OnInit {
 
-  heroes: Heroe[] = [];
+  heroes: Hero[] = [];
 
   constructor(
     private heroesService: HeroesService,
@@ -24,7 +25,7 @@ export class HeroesComponent implements OnInit {
     console.log('Heroes fetched: ' + this.heroes);
   }
 
-  verHeroe(hero: Heroe): void {
+  verHeroe(hero: Hero): void {
     this.router.navigate(['/heroe-detail', hero.id]);
   }
 }

@@ -1,4 +1,4 @@
-<h1 class="animated fadeIn">{{heroe.nombre | uppercase }} <small>({{heroe.aparicion | date:'y'}})</small></h1>
+<h1 class="animated fadeIn">{{heroe.nombre | titlecase }} <small>({{heroe.aparicion | date:'y'}})</small></h1>
 <hr>
 <div class="row animated fadeIn fast">
   <div class="col-md-4">
@@ -10,14 +10,34 @@
   </div>
 
   <div class="col-md-8">
-    <h3>{{heroe.nombre}}</h3>
-    <p>
-      {{heroe.bio}}
-    </p>
+    <div class="main-container">
+      <strong><span>Nombre: </span></strong>
+      <span>{{heroe.nombre | uppercase }}</span>
+    </div>
+    <div>
+      <strong><span>Aliases: </span></strong>
+      <ul>
+        <li *ngFor="let alias of heroe.aliases | slice:0:3">{{alias}}</li>
+        <li *ngIf="heroe.aliases.length > 3">...</li>
+      </ul>
+    </div>
+    <div>
+      <strong><span>Altura: </span></strong>
+      <span>{{heroe.altura | number: '1.0-2'}}</span>
+    </div>
+    <div>
+      <strong><span>Popularidad: </span></strong>
+      <span>{{heroe.popularidad | percent: '2.2-2'}}</span>
+    </div>
+    <div>
+      <strong><span>Bio: </span></strong>
+      <span>{{heroe.bio}}</span>
+    </div>
     <div>
       <!--<img *ngIf="casa.valueOf() === 'DC'" src="assets/img/dc.png" />-->
       <img *ngIf="casa === '0'" src="assets/img/dc.png" class="img-fluid fadeIn" width="30%" alt="DC"/>
       <img *ngIf="casa === '1'" src="assets/img/marvel.png" class="img-fluid fadeIn" width="225" alt="Marvel"/>
     </div>
+
   </div>
 </div>

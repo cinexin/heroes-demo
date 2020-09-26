@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Heroe, HeroesService} from '../../services/heroes.service';
+import {HeroesService} from '../../services/heroes.service';
 import {ActivatedRoute, Router} from '@angular/router';
+import {Hero} from '../../model/hero';
 
 @Component({
   selector: 'app-hero-search',
@@ -9,7 +10,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 export class HeroSearchComponent implements OnInit {
 
-  filteredHeroes: Heroe[];
+  filteredHeroes: Hero[];
 
   constructor(
     private heroesService: HeroesService,
@@ -28,7 +29,7 @@ export class HeroSearchComponent implements OnInit {
   }
 
   verHeroe(index: number): void {
-    console.log(`Heroe index: ${index}`);
+    console.log(`Hero index: ${index}`);
     const hero = this.filteredHeroes[index] ? this.filteredHeroes[index] : this.filteredHeroes[0];
     console.log(`Hero selected: ${hero}`);
     this.router.navigate(['heroe-detail', index]);

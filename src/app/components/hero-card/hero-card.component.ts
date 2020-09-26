@@ -1,6 +1,6 @@
 import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 import {Router} from '@angular/router';
-import {Heroe} from '../../services/heroes.service';
+import {Hero} from '../../model/hero';
 
 @Component({
   selector: 'app-hero-card',
@@ -11,12 +11,12 @@ export class HeroCardComponent implements OnInit {
 
   @Input() hero: any = {};
 
-  @Output() selectedHero: EventEmitter<Heroe>;
+  @Output() selectedHero: EventEmitter<Hero>;
 
   constructor(
     private router: Router
   ) {
-    this.selectedHero = new EventEmitter<Heroe>();
+    this.selectedHero = new EventEmitter<Hero>();
   }
 
   ngOnInit(): void {

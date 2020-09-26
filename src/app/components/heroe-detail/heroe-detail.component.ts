@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {Heroe, HeroesService} from '../../services/heroes.service';
+import {HeroesService} from '../../services/heroes.service';
+import {Hero} from '../../model/hero';
 
 @Component({
   selector: 'app-heroe-detail',
@@ -9,7 +10,7 @@ import {Heroe, HeroesService} from '../../services/heroes.service';
 })
 export class HeroeDetailComponent implements OnInit {
 
-  heroe: Heroe;
+  heroe: Hero;
   casa: string;
 
   constructor(
