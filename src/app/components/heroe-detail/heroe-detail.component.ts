@@ -14,6 +14,7 @@ export class HeroeDetailComponent implements OnInit {
   casa: string;
   dataPromise: Promise<string>;
   dataFetched = false;
+  showRealName = false;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -40,4 +41,7 @@ export class HeroeDetailComponent implements OnInit {
     );
   }
 
+  toggleShowRealName(): void {
+    this.showRealName = !this.showRealName;
+  }
 }

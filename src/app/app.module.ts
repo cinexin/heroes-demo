@@ -24,6 +24,7 @@ import { HeroSearchComponent } from './components/hero-search/hero-search.compon
 import { HeroCardComponent } from './components/hero-card/hero-card.component';
 import { CapitalizePipe } from './pipes/capitalize.pipe';
 import { SecureDomPipe } from './pipes/secure-dom.pipe';
+import { SecretPipe } from './pipes/secret.pipe';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { SecureDomPipe } from './pipes/secure-dom.pipe';
     HeroSearchComponent,
     HeroCardComponent,
     CapitalizePipe,
-    SecureDomPipe
+    SecureDomPipe,
+    SecretPipe
   ],
   imports: [
     BrowserModule,

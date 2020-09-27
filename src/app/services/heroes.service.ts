@@ -9,6 +9,7 @@ export class HeroesService {
     {
       id: 0,
       nombre: 'Aquaman',
+      nombreReal: 'Arthur Curry',
       aliases: ['Rey de los Siete Mares', 'Habitante de las Profundidades', 'As Acuático', 'Marino Maravilla'],
       altura: 1.93,
       popularidad: 0.7632,
@@ -22,6 +23,7 @@ export class HeroesService {
     {
       id: 1,
       nombre: 'Batman',
+      nombreReal: 'Bruce Wayne',
       aliases: ['Murciélago', 'Matches Malone', 'El caballero de la noche', 'El caballero oscuro', 'Zurdo Knox3'],
       altura: 1.88,
       popularidad: 0.9678,
@@ -35,6 +37,7 @@ export class HeroesService {
     {
       id: 2,
       nombre: 'Daredevil',
+      nombreReal: '"Matt" Murdock',
       altura: 1.80,
       popularidad: 0.6523,
       valorPrimerComic: 198000.00,
@@ -48,6 +51,7 @@ export class HeroesService {
     {
       id: 3,
       nombre: 'Hulk',
+      nombreReal: 'Bruce Banner',
       altura: 1.78,
       popularidad: 0.8532,
       valorPrimerComic: 300000.00,
@@ -61,6 +65,7 @@ export class HeroesService {
     {
       id: 4,
       nombre: 'Linterna Verde',
+      nombreReal: 'Hal Jordan',
       altura: 1.82,
       popularidad: 0.556,
       valorPrimerComic: 750000.00,
@@ -74,6 +79,7 @@ export class HeroesService {
     {
       id: 5,
       nombre: 'Spider-Man',
+      nombreReal: 'Peter Parker',
       altura: 1.78,
       popularidad: 1.0,
       valorPrimerComic: 110000.00,
@@ -87,6 +93,7 @@ export class HeroesService {
     {
       id: 6,
       nombre: 'Wolverine',
+      nombreReal: 'James Logan',
       popularidad: 0.6560,
       altura: 1.6012,
       valorPrimerComic: 210000.00,

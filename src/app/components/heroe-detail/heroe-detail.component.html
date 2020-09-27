@@ -43,6 +43,15 @@
       <span>{{hero.bio}}</span>
     </div>
 
+    <div>
+      <strong><span class="ml-2">{{hero.nombreReal | secret:showRealName}}</span></strong>
+      <span>
+        <button class="btn btn-outline-primary ml-2" (click)="toggleShowRealName()">
+          Mostrar / Ocultar nombre real
+        </button>
+      </span>
+    </div>
+
     <div class="mt-5">
       <iframe width="560"
               height="315"

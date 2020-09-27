@@ -7,6 +7,7 @@ export enum Casa {
 export interface Hero {
   id: number;
   nombre: string;
+  nombreReal: string;
   aliases: string[];
   altura: number;
   popularidad: number;
