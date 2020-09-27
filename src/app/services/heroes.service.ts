@@ -9,7 +9,7 @@ export class HeroesService {
     {
       id: 0,
       nombre: 'Aquaman',
-      aliases: ['Rey de los Siete Mares', ' Habitante de las Profundidades', 'As Acuático', 'Marino Maravilla'],
+      aliases: ['Rey de los Siete Mares', 'Habitante de las Profundidades', 'As Acuático', 'Marino Maravilla'],
       altura: 1.93,
       popularidad: 0.7632,
       valorPrimerComic: 1000.34,

@@ -17,7 +17,7 @@
     <div>
       <strong><span>Aliases: </span></strong>
       <ul>
-        <li *ngFor="let alias of hero.aliases | slice:0:3">{{alias}}</li>
+        <li *ngFor="let alias of hero.aliases | slice:0:3">{{alias | capitalize: true}}</li>
         <li *ngIf="hero.aliases.length > 3">...</li>
       </ul>
     </div>
