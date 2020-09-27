@@ -23,6 +23,7 @@ import { HeroeDetailComponent } from './components/heroe-detail/heroe-detail.com
 import { HeroSearchComponent } from './components/hero-search/hero-search.component';
 import { HeroCardComponent } from './components/hero-card/hero-card.component';
 import { CapitalizePipe } from './pipes/capitalize.pipe';
+import { SecureDomPipe } from './pipes/secure-dom.pipe';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { CapitalizePipe } from './pipes/capitalize.pipe';
     HeroeDetailComponent,
     HeroSearchComponent,
     HeroCardComponent,
-    CapitalizePipe
+    CapitalizePipe,
+    SecureDomPipe
   ],
   imports: [
     BrowserModule,

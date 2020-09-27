@@ -15,4 +15,5 @@ export interface Hero {
   img: string;
   fechaPrimeraAparicion: string;
   casa: Casa;
+  videoUrl: string;
 }
