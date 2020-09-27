@@ -1,8 +1,8 @@
-<h1 class="animated fadeIn">{{heroe.nombre | titlecase }} <small>({{heroe.aparicion | date:'y'}})</small></h1>
+<h1 class="animated fadeIn">{{hero.nombre | titlecase }} <small>({{hero.aparicion | date:'y'}})</small></h1>
 <hr>
 <div class="row animated fadeIn fast">
   <div class="col-md-4">
-    <img [srcset]="heroe.img" class="img-fluid" [alt]="heroe.nombre"/>
+    <img [srcset]="hero.img" class="img-fluid" [alt]="hero.nombre"/>
     <br><br>
     <a [routerLink]="['/heroes']" class="btn btn-outline-danger btn-block">
       Back
@@ -12,35 +12,44 @@
   <div class="col-md-8">
     <div class="main-container">
       <strong><span>Nombre: </span></strong>
-      <span>{{heroe.nombre | uppercase }}</span>
+      <span>{{hero.nombre | uppercase }}</span>
     </div>
     <div>
       <strong><span>Aliases: </span></strong>
       <ul>
-        <li *ngFor="let alias of heroe.aliases | slice:0:3">{{alias}}</li>
-        <li *ngIf="heroe.aliases.length > 3">...</li>
+        <li *ngFor="let alias of hero.aliases | slice:0:3">{{alias}}</li>
+        <li *ngIf="hero.aliases.length > 3">...</li>
       </ul>
     </div>
     <div>
       <strong><span>Altura: </span></strong>
-      <span>{{heroe.altura | number: '1.0-2'}}</span>
+      <span>{{hero.altura | number: '1.0-2'}}</span>
     </div>
     <div>
       <strong><span>Popularidad: </span></strong>
-      <span>{{heroe.popularidad | percent: '2.2-2'}}</span>
+      <span>{{hero.popularidad | percent: '2.2-2'}}</span>
     </div>
     <div>
       <strong><span>Valor primer cómic / aparición: </span></strong>
-      <span>{{heroe.valorPrimerComic | currency: 'USD': 'symbol':'.0-0'}}</span>
+      <span>{{hero.valorPrimerComic | currency: 'USD': 'symbol':'.0-0'}}</span>
     </div>
     <div>
       <strong><span>Bio: </span></strong>
-      <span>{{heroe.bio}}</span>
+      <span>{{hero.bio}}</span>
     </div>
+
     <div>
-      <!--<img *ngIf="casa.valueOf() === 'DC'" src="assets/img/dc.png" />-->
       <img *ngIf="casa === '0'" src="assets/img/dc.png" class="img-fluid fadeIn" width="30%" alt="DC"/>
       <img *ngIf="casa === '1'" src="assets/img/marvel.png" class="img-fluid fadeIn" width="225" alt="Marvel"/>
+    </div>
+
+    <div *ngIf="dataFetched"  class="alert alert-success" style="font-size: small">
+      {{dataPromise | async}}
+    </div>
+    <div class="alert alert-light" style="font-size: smaller; margin-top: 1em">
+      <pre>
+        {{hero | json}}
+      </pre>
     </div>
 
   </div>

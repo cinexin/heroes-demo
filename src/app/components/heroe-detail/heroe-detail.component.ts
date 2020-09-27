@@ -10,24 +10,34 @@ import {Hero} from '../../model/hero';
 })
 export class HeroeDetailComponent implements OnInit {
 
-  heroe: Hero;
+  hero: Hero;
   casa: string;
+  dataPromise: Promise<string>;
+  dataFetched = false;
 
   constructor(
     private activatedRoute: ActivatedRoute,
     private heroesService: HeroesService
   ) {
+  }
+
+  ngOnInit(): void {
     this.activatedRoute.params.subscribe(
       params => {
         const heroId = params.id;
         // tslint:disable-next-line:radix
-        this.heroe = heroesService.getHero(parseInt(heroId));
-        this.casa = this.heroe.casa.toString();
+        this.hero = this.heroesService.getHero(parseInt(heroId));
+        this.casa = this.hero.casa.toString();
       }
     );
-  }
-
-  ngOnInit(): void {
+    this.dataPromise = new Promise<any>(
+      resolve => {
+        setTimeout(() => {
+          this.dataFetched = true;
+          resolve('Info sobre Héroe obtenida satisfactoriamente');
+        }, 500);
+      }
+    );
   }
 
 }
