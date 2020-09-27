@@ -3,7 +3,7 @@
   <div class="card-body animated fadeIn fast">
     <h5 class="card-title">{{hero.nombre}}</h5>
     <p class="card-text">{{hero.bio}}</p>
-    <p class="card-text"><small class="text-muted">{{hero.aparicion}}</small></p>
+    <p class="card-text">{{hero.fechaPrimeraAparicion | date:'MMMM dd EEEE  y': '': 'es'}}</p>
     <button (click)="verHeroe()" class="btn btn-outline-primary my-2 my-sm-0">View details</button>
   </div>
 </div>

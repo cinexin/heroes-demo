@@ -13,6 +13,6 @@ export interface Hero {
   valorPrimerComic: number;
   bio: string;
   img: string;
-  aparicion: string;
+  fechaPrimeraAparicion: string;
   casa: Casa;
 }
