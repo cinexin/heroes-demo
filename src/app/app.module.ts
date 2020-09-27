@@ -42,7 +42,7 @@ import { HeroCardComponent } from './components/hero-card/hero-card.component';
     HeroesService,
     {
       provide: LOCALE_ID,
-      useValue: ['es', 'fr']
+      useValue: 'es'
     }
   ],
   bootstrap: [AppComponent]
